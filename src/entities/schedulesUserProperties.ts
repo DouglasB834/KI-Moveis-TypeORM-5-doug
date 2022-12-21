@@ -17,6 +17,5 @@ export class  SchedulesUserProperties {
     property :Properties
 
     @ManyToOne(()=> User,(user)=> user.schedulesUserProperties, {eager:true})
-    // , (user)=> user.schedulesUserProperties )
     user :User
 }
