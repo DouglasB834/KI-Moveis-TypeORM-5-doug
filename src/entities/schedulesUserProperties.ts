@@ -2,7 +2,7 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Properties } from "./createProperties.entity";
 import { User } from "./createuser.entity";
 
-@Entity()
+@Entity("schedulesUserProperties")
 export class  SchedulesUserProperties {
 
     @PrimaryGeneratedColumn("uuid")
@@ -16,6 +16,7 @@ export class  SchedulesUserProperties {
     @ManyToOne(()=> Properties, (proper) => proper.schedulesUserProperties )
     property :Properties
 
-    @ManyToOne(()=> User, (user)=> user.schedulesUserProperties )
+    @ManyToOne(()=> User,(user)=> user.schedulesUserProperties, {eager:true})
+    // , (user)=> user.schedulesUserProperties )
     user :User
 }

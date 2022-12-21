@@ -14,7 +14,7 @@ import { Addresses } from "./createAdresses.entity";
 import { Categories } from "./createCategories.entity";
 import { SchedulesUserProperties } from "./schedulesUserProperties";
 
-@Entity()
+@Entity("properties")
 export class Properties {
   @PrimaryGeneratedColumn("uuid")
   id: string;

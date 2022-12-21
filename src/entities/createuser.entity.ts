@@ -13,7 +13,7 @@ import {
 } from "typeorm";
 import { SchedulesUserProperties } from "./schedulesUserProperties";
 
-@Entity()
+@Entity("users")
 export class User {
   @PrimaryGeneratedColumn("uuid")
   id: string;

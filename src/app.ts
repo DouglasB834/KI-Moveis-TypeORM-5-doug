@@ -6,6 +6,7 @@ import { RouteMain } from "./Routes/user.Routes";
 import { loginRoutes } from "./Routes/login.Route";
 import { propRount } from "./Routes/properties.Route";
 import { RouteCategorie } from "./Routes/categories.Route";
+import { schedulesRoutes } from "./Routes/schedules.Routeer";
 
 const app = express();
 app.use(express.json());
@@ -13,6 +14,7 @@ app.use("/users", RouteMain);
 app.use("/login", loginRoutes);
 app.use("/properties", propRount);
 app.use("/categories", RouteCategorie);
+app.use("/schedules", schedulesRoutes);
 
 
 app.use(handleErro);
