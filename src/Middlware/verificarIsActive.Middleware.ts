@@ -7,7 +7,6 @@ export const verificarIsactive = async ( req: Request, res: Response, next: Next
     const {email} = req.body
     const userRes = AppDataSource.getRepository(User)
     const user = await userRes.findOneBy({email:email})
-    console.log(user)
     if(!user.isActive) return res.status(400).json({message:"Usuario esta inativo!"})
 
     return next()

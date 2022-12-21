@@ -12,9 +12,9 @@ export const loginUserService = async ({email,password}: IUserLogin): Promise<St
 
   if (!user) throw new appErros("Email or PassWord Incorrect", 401);
 
-  // if (user.isActive == false) {
-  //   throw new appErros("Usuario inativo ", 400);
-  // }
+  if (user.isActive == false) {
+    throw new appErros("Usuario inativo ", 400);
+  }
   
   const passwordalid = await compare(password, user.password);
 

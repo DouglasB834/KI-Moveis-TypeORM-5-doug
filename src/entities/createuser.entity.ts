@@ -1,4 +1,5 @@
 import { hashSync, getRounds } from "bcryptjs";
+import { scheduler } from "timers/promises";
 
 import {
   Column,
@@ -8,7 +9,9 @@ import {
   UpdateDateColumn,
   BeforeInsert,
   BeforeUpdate,
+  OneToMany,
 } from "typeorm";
+import { SchedulesUserProperties } from "./schedulesUserProperties";
 
 @Entity()
 export class User {
@@ -47,4 +50,8 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+
+  @OneToMany(() =>SchedulesUserProperties, (userToProper) => userToProper.user)
+  schedulesUserProperties:SchedulesUserProperties[]
 }

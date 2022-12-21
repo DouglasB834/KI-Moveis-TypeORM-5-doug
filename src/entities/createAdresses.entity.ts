@@ -5,18 +5,18 @@ export class Addresses {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
+  @Column({length:100})
   district: string;
 
-  @Column()
+  @Column({ length: 8 })
   zipCode: string;
 
-  @Column({nullable:true})//pode ser null
+  @Column({length:5 , nullable: true })
   number?: string;
 
-  @Column()
+  @Column({length:50})
   city: string;
 
-  @Column()
+  @Column({ length: 2 })
   state: string;
 }
