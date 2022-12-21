@@ -1,4 +1,3 @@
-import { createAdressesController } from "../../Controllers/properties/createAdresses.Controller";
 import AppDataSource from "../../data-source";
 import { Addresses } from "../../entities/createAdresses.entity";
 import { Categories } from "../../entities/createCategories.entity";
