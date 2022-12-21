@@ -15,13 +15,12 @@ export const createPropertiesService = async (data:any): Promise<any> =>{
    const adressResp =  AppDataSource.getRepository(Addresses)
 
     const findCategory = await categoriesResp.findOneBy({id:categoryId})
+    if(!findCategory)throw new appErros("invalid categoryId1", 404)
 
     const addadress = await createAdressesService(address)
-    if(addadress.zipCode ) throw new appErros("invalid categoryId", 409)
-    if(!addadress.zipCode ) throw new appErros("invalid categoryId", 400)
-
     const idAdress = addadress.id
     const findAdress = await adressResp.findOneBy({id:idAdress })
+
     const salvando = properResp.create({
         ...data,
         category:findCategory,
@@ -30,4 +29,15 @@ export const createPropertiesService = async (data:any): Promise<any> =>{
     const addPropiedade = await properResp.save(salvando)    
  
     return addPropiedade
+}
+
+
+export const listePropertiesService =async():Promise<Properties[]> =>{
+    const properResp =  AppDataSource.getRepository(Properties)
+
+    const findPropry = properResp.find({
+        relations:{ address:true, category:true}
+    })
+    return findPropry
+
 }

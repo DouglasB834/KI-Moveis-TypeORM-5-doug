@@ -29,7 +29,7 @@ export const listCategoriesPropertiesService= async(id:string ): Promise<Categor
     const categoriesRep = AppDataSource.getRepository(Categories)
     const categorie = await categoriesRep.findOne({
     where: {id:id} ,      
-     relations: {properties:true}
+     relations: {properties:true }
     })
     if(!categorie)throw new appErros ("Property not found", 404)
 
