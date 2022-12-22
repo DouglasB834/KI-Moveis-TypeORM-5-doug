@@ -3,13 +3,12 @@ import { Addresses } from "../../entities/createAdresses.entity";
 import { Categories } from "../../entities/createCategories.entity";
 import { Properties } from "../../entities/createProperties.entity";
 import { appErros } from "../../error/appErros";
-import {
-  IPropertyRequest,
-  IPropertyResponse,
-} from "../../interfaces/properties";
+import { IPropertyRequest } from "../../interfaces/properties";
 import { createAdressesService } from "./createAdresses.Service";
 
-export const createPropertiesService = async (data: IPropertyRequest): Promise<any> => {
+export const createPropertiesService = async (
+  data: IPropertyRequest
+): Promise<Properties> => {
   const { address, categoryId } = data;
 
   const properResp = AppDataSource.getRepository(Properties);

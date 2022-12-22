@@ -1,9 +1,11 @@
 import { hash } from "bcryptjs";
-import AppDataSource from "../data-source";
-import { User } from "../entities/createuser.entity";
-import { appErros } from "../error/appErros";
-import { IUserResponse, IUserUpdate } from "../interfaces/users";
-import { resUpdateSchema } from "../Serializer/usersSchemas";
+import AppDataSource from "../../data-source";
+import { User } from "../../entities/createuser.entity";
+import { appErros } from "../../error/appErros";
+import { IUserResponse, IUserUpdate } from "../../interfaces/users";
+import { resUpdateSchema } from "../../Serializer/usersSchemas";
+
+
 
 export const updateUserService = async (data :IUserUpdate, userId:string):Promise<IUserResponse> =>{
     

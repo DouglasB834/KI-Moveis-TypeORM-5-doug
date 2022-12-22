@@ -1,4 +1,5 @@
 import { Properties } from "../../entities/createProperties.entity"
+import { IUser } from "../users"
 
 export interface IScheduleRequest {
     userId: string
@@ -10,7 +11,9 @@ export interface IScheduleRequest {
 
 export interface IScheduleResponse {
     userId: string
-    propertyId: Properties
+    propertyId: string
     date: string
     hour: string
+    user:IUser
+
 }

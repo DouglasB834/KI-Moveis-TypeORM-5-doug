@@ -1,4 +1,5 @@
 import { ICategoryResponse } from "../categories";
+import { IScheduleResponse } from "../schedules";
 
 export interface IAddressRequest {
     id?:string;
@@ -16,13 +17,14 @@ export interface IPropertyRequest {
     categoryId: string
 }
 export interface IPropertyResponse {
-    value: number
-    size: number
-    address: IAddressRequest
-    category: ICategoryResponse
     id: string
 	sold: boolean
+    value: number
+    size: number
 	createdAt: Date
 	updatedAt: Date
+    schedules: IScheduleResponse
+    address: IAddressRequest
+    category: ICategoryResponse
 
 }

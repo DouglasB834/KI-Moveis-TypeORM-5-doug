@@ -3,9 +3,7 @@ import { Properties } from "../../entities/createProperties.entity"
 import { SchedulesUserProperties } from "../../entities/schedulesUserProperties"
 import { appErros } from "../../error/appErros"
 
-export const listSchedulesService =async (idProperty:String|any)=> {
-
-    const schudelesResp =  AppDataSource.getRepository(SchedulesUserProperties)
+export const listSchedulesService =async (idProperty:String):Promise<Properties>=> {
     const propertiesResp =  AppDataSource.getRepository(Properties)
 
    const findProper = await propertiesResp
