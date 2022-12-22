@@ -1,4 +1,7 @@
+import { ICategoryResponse } from "../categories";
+
 export interface IAddressRequest {
+    id?:string;
     district: string
     zipCode: string
     number?: string
@@ -11,4 +14,15 @@ export interface IPropertyRequest {
     size: number
     address: IAddressRequest
     categoryId: string
+}
+export interface IPropertyResponse {
+    value: number
+    size: number
+    address: IAddressRequest
+    category: ICategoryResponse
+    id: string
+	sold: boolean
+	createdAt: Date
+	updatedAt: Date
+
 }
