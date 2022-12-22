@@ -1,10 +1,11 @@
 import { compare } from "bcryptjs";
-import AppDataSource from "../data-source";
-import { User } from "../entities/createuser.entity";
-import { IUserLogin } from "../interfaces/users";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
-import { appErros } from "../error/appErros";
+import { IUserLogin } from "../../interfaces/users";
+import AppDataSource from "../../data-source";
+import { User } from "../../entities/createuser.entity";
+import { appErros } from "../../error/appErros";
+
 
 export const loginUserService = async ({email,password}: IUserLogin): Promise<String> => {
   const userRes = AppDataSource.getRepository(User);

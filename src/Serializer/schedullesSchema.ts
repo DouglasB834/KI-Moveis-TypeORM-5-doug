@@ -8,3 +8,4 @@ export const schedulesSchema: yup.SchemaOf<IScheduleRequest> = yup.object().shap
     hour: yup.string().required()
 
 })
+
