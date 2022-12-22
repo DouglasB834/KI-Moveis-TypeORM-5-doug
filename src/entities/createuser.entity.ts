@@ -53,5 +53,5 @@ export class User {
 
 
   @OneToMany(() =>SchedulesUserProperties, (userToProper) => userToProper.user)
-  schedulesUserProperties:SchedulesUserProperties[]
+  schedules:SchedulesUserProperties[]
 }

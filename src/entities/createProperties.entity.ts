@@ -42,6 +42,6 @@ export class Properties {
   category:Categories
 
   @OneToMany(() => SchedulesUserProperties, (userToProper) => userToProper.property )
-  schedulesUserProperties:SchedulesUserProperties[]
+  schedules:SchedulesUserProperties[]
 
 }

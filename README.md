@@ -1,7 +1,8 @@
 # S5-19 | 🏁 Entrega: KImóveis - TypeORM com Relacionamentos
 
 Para inciar este projeto, é necessário instalar as dependências, que serão utilizadas nos testes. Portanto utilize o comando abaixo para instalar tais dependências:
-
+# 
+https://github.com/Kenzie-Academy-Brasil-Developers/m4-entrega-sprint-5-doug
 ````
 yarn install
 ````

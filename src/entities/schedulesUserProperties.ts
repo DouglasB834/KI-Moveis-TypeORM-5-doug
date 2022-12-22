@@ -13,9 +13,9 @@ export class  SchedulesUserProperties {
     @Column({type: "time"})
     hour : string
 
-    @ManyToOne(()=> Properties, (proper) => proper.schedulesUserProperties )
+    @ManyToOne(()=> Properties, (proper) => proper.schedules,{eager:true} )
     property :Properties
 
-    @ManyToOne(()=> User,(user)=> user.schedulesUserProperties, {eager:true})
+    @ManyToOne(()=> User,(user)=> user.schedules, {eager:true})
     user :User
 }

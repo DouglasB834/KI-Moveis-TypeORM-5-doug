@@ -12,6 +12,6 @@ export const schedulesCreateController = async (
 };
 export const listSchedulesController = async (req: Request, res: Response) => {
   const { id } = req.params;
-  const data = await listSchedulesService( id);
-  return res.status(201).json(data);
+  const data = await listSchedulesService(id);
+  return res.status(200).json(data);
 };

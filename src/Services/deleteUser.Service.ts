@@ -7,12 +7,7 @@ export const deleteUserService = async (userId: string):Promise <{}> => {
 
   if (!user) {
     throw new appErros("user not foud",404)
-  }
-
-    // await userRes.softRemove(user);
-  // const tableDelete =await userRes.save({
-  //   ...user, isActive:false
-  // })
+  }  
   
   await userRes.update(userId, { isActive: false });
   return {};

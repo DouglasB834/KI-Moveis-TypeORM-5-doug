@@ -18,6 +18,8 @@ export const schedulesCreateService = async (
   const propertiesRep = AppDataSource.getRepository(Properties);
   const userRep = AppDataSource.getRepository(User);
 
+
+
   const findUser = await userRep
     .createQueryBuilder()
     .select("u")
@@ -35,6 +37,7 @@ export const schedulesCreateService = async (
     .getOne();
   if (!findProper) throw new appErros("property not found1", 404);
 
+
   const findSchedules = await schedulesRep
     .createQueryBuilder()
     .select("sup")
@@ -43,8 +46,7 @@ export const schedulesCreateService = async (
     .andWhere("sup.hour = :hour", { hour: hour })
     .getOne();
 
-  if (findSchedules)
-    throw new appErros("Schedules time or day unavailable ", 409);
+  if (findSchedules) throw new appErros("Schedules time or day unavailable ", 409);
 
   const newDate = new Date(data.date).toString().split(" ")[0];
 
