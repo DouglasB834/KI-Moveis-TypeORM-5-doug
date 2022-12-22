@@ -9,10 +9,7 @@ import {
   IScheduleResponse,
 } from "../../interfaces/schedules";
 
-export const schedulesCreateService = async (
-  data: IScheduleRequest,
-  id: string
-) => {
+export const schedulesCreateService = async ( data: IScheduleRequest,  id: string):Promise<{message:string}> => {
   const { hour, date, propertyId } = data;
   const schedulesRep = AppDataSource.getRepository(SchedulesUserProperties);
   const propertiesRep = AppDataSource.getRepository(Properties);
@@ -65,13 +62,5 @@ export const schedulesCreateService = async (
   });
   await schedulesRep.save(addSchedules);
 
-//   const insertSchedules = await schedulesRep.createQueryBuilder()
-//   .insert()
-//   .values([
-//       { date: date, hour: hour, property: findProper, user:findUser}
-//   ])
-//   .returning("*")
-//   .execute();
-//   console.log(insertSchedules)
   return { message: "Schedule created" };
 };
